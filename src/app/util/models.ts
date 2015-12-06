@@ -83,7 +83,7 @@ export class Collection<T extends Model> extends Events {
     dirty = false;
 
     get(pk: number) {
-        return this.models[pk];
+        return this.filter((m: T) => m.pk == pk)[0];
     }
 
     filter(key: (model: T) => boolean) {
@@ -106,8 +106,8 @@ export class Collection<T extends Model> extends Events {
     remove(pk: number) {
         this.dirty = true;
 
-        var model = this.models.filter((model) => model.pk == pk)[0];
-        this.models.splice(this.models.indexOf(model), 1);
+        this.models.splice(this.models.indexOf(this.get(pk)), 1);
+        this.current.splice(this.current.indexOf(pk), 1);
         this.trigger('remove');
     }
 
