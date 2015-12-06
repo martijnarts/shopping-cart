@@ -9,10 +9,26 @@ import {CartItem} from './item/item';
     directives: [NgFor, CartItem],
 })
 export class Cart {
-    public cart = new CartModel();
-    public newItem: string = '';
+    cart = new CartModel();
+    newItem: string = '';
+    saving = false;
+    saved = false;
 
-    public addItem() {
+    onInit() {
+        this.cart.bind('presave', () => this.saving = true);
+        this.cart.bind('save', this.savedCart.bind(this));
+
+        this.cart.bind('append', this.cart.save.bind(this.cart));
+        this.cart.bind('remove', this.cart.save.bind(this.cart));
+    }
+
+    savedCart() {
+        this.saving = false;
+        this.saved = true;
+        setTimeout(() => this.saved = false, 1000);
+    }
+
+    addItem() {
         this.cart.addItem(this.newItem);
         this.newItem = '';
     }

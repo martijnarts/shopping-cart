@@ -1,7 +1,11 @@
-<h1>Shopping cart</h1>
+<h1>
+    Shopping cart
+    <small style="color: blue" *ng-if="saving">Saving...</small>
+    <small style="color: green" *ng-if="saved">Saved!</small>
+</h1>
 <ul>
-    <li *ng-for="#item of cart.items">
-        <cart-item [item]="item"></cart-item>
+    <li *ng-for="#model of cart.models">
+        <cart-item [item]="model"></cart-item>
     </li>
 </ul>
 
