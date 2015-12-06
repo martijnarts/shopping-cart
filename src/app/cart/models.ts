@@ -16,6 +16,10 @@ export class CartItemModel extends Model {
         this.persist();
     }
 
+    /**
+     * We're deferring this to the cart's save method, since saving
+     * the individual items seems like an unnecessary hassle.
+     */
     save(): Promise<boolean> {
         return this.cart.save();
     }

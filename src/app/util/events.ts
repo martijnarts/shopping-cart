@@ -2,6 +2,10 @@ type Event = () => void;
 type EventMap = {[index: string]: Event[]};
 
 
+/**
+ * A very simple event class, made pretty much only to extend upon for other
+ * classes. Cannot even unbind events yet.
+ */
 export class Events {
     private events: EventMap = {};
 
