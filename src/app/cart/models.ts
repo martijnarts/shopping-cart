@@ -87,7 +87,7 @@ export class CartItemModel extends Model {
 
     save(): Promise<boolean> {
         return new Promise((done) => {
-            this.trigger('saveStart');
+            this.trigger('presave');
             setTimeout(() => {
                 done(true);
             }, 2000);

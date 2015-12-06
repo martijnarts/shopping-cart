@@ -14,7 +14,7 @@ export class CartItem {
     saved = false;
 
     onInit() {
-        this.item.bind('saveStart', () => this.saving = true);
+        this.item.bind('presave', () => this.saving = true);
         this.item.bind('save', this.itemSaved.bind(this));
     }
 
