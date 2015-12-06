@@ -1,0 +1,11 @@
+<h1>Shopping cart</h1>
+<ul>
+    <li *ng-for="#item of cart.items">
+        <cart-item [item]="item"></cart-item>
+    </li>
+</ul>
+
+<form (submit)="addItem()">
+    <input type="text" [(ng-model)]="newItem">
+    <button type="submit">Add</button>
+</form>

@@ -1,0 +1,8 @@
+<span>{{[(item.name)]}}</span>
+
+<input type="number" [(ng-model)]="item.amount" (blur)="item.save()">
+
+<button (click)="item.delete()">Remove</button>
+
+<span style="color: blue" *ng-if="saving">Saving...</span>
+<span style="color: green" *ng-if="saved">Saved!</span>
