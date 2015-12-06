@@ -1,0 +1,42 @@
+{
+  "name": "shopping-cart",
+  "version": "0.0.1",
+  "description": "Simple shopping cart example",
+  "main": "dist/js/app.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TotempaaltJ/shopping-cart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TotempaaltJ/shopping-cart/issues"
+  },
+  "homepage": "https://github.com/TotempaaltJ/shopping-cart#readme",
+  "devDependencies": {
+    "css-loader": "^0.23.0",
+    "git-describe": "^3.0.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "gulp-webserver": "^0.9.1",
+    "node-sass": "^3.4.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "ts-loader": "^0.7.1",
+    "typescript": "^1.6.2",
+    "webpack": "^1.12.6"
+  },
+  "dependencies": {
+    "angular2": "=2.0.0-alpha.46",
+    "es6-shim": "^0.33.13",
+    "reflect-metadata": "^0.1.2"
+  }
+}
