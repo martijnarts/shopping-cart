@@ -86,6 +86,10 @@ export class Collection<T extends Model> extends Events {
         return this.models[pk];
     }
 
+    filter(key: (model: T) => boolean) {
+        return this.models.filter(key);
+    }
+
     append(model: T) {
         model.bind('change', () => {
             this.dirty = true;

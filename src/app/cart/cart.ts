@@ -13,6 +13,7 @@ export class Cart {
     newItem: string = '';
     saving = false;
     saved = false;
+    error = false;
 
     onInit() {
         this.cart.bind('presave', () => this.saving = true);
@@ -29,7 +30,10 @@ export class Cart {
     }
 
     addItem() {
-        this.cart.addItem(this.newItem);
+        this.error = false;
+        if(!this.cart.addItem(this.newItem)) {
+            this.error = true;
+        };
         this.newItem = '';
     }
 }

@@ -30,8 +30,19 @@ export class CartItemModel extends Model {
 
 export class CartModel extends Collection<CartItemModel> {
     addItem(name: string) {
+        if(name == '') {
+            return false;
+        }
+
+        var dupe = this.filter((m: CartItemModel) => m.name == name);
+        if(dupe.length) {
+            dupe[0].amount += 1;
+            return true;
+        }
+
         this.index++;
         this.append(new CartItemModel(this, this.index, name));
+        return true;
     }
 
     save(): Promise<boolean> {

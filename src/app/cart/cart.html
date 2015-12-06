@@ -10,6 +10,8 @@
 </ul>
 
 <form (submit)="addItem()">
-    <input type="text" [(ng-model)]="newItem">
+    <input type="text" [(ng-model)]="newItem" placeholder="Name">
     <button type="submit">Add</button>
+
+    <small style="color: red" *ng-if="error">Item name is required!</small>
 </form>
