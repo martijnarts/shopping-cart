@@ -18,5 +18,9 @@ There's some documentation strewn throughout the code. The model and event
 system are made to be portable and lightly modeled after Backbone's system for
 those.
 
+I was gonna add some kind of persistence, but making this persistent with
+something like localStorage seems like more hassle than it's worth for the
+scope of this project.
+
 
 [a2ws]: https://github.com/AngularClass/angular2-webpack-starter/
