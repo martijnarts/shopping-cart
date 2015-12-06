@@ -8,11 +8,9 @@ export class CartItemModel extends Model {
     @field name: string;
     @field amount: number = 1;
 
-    constructor(cart: CartModel, pk: number, name: string) {
+    constructor(cart: CartModel, name: string) {
         super();
         this.cart = cart;
-
-        this.pk = pk;
         this.name = name;
 
         this.persist();
@@ -40,8 +38,7 @@ export class CartModel extends Collection<CartItemModel> {
             return true;
         }
 
-        this.index++;
-        this.append(new CartItemModel(this, this.index, name));
+        this.append(new CartItemModel(this, name));
         return true;
     }
 

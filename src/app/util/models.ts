@@ -91,6 +91,8 @@ export class Collection<T extends Model> extends Events {
     }
 
     append(model: T) {
+        this.index++;
+        model.pk = this.index;
         model.bind('change', () => {
             this.dirty = true;
             this.current.splice(this.current.indexOf(model.pk), 1);
